@@ -15,7 +15,7 @@ def ZK_equality(G,H):
     D2 = m*G + r2.value*H
 
     #Generate a NIZK proving equality of the plaintexts
-    stmt = DLRep(C1,r1*G) & DLRep(C2,r1*H+m*G)
+    stmt = DLRep(C1,r1*G) && DLRep(C2,r1*H+m*G)
     zk_proof = stmt.prove()
 
     #Return two ciphertexts and the proof
